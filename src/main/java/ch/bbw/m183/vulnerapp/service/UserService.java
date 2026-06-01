@@ -10,16 +10,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.server.ResponseStatusException;
 
 @Slf4j
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class UserService {
+public class UserService implements IUserService {
 
 	private final EntityManager entityManager;
 
+	@Override
 	public UserEntity whoami(String username, String password) {
 		// native queries are more performant!!1 :P
 		var user = (UserEntity) entityManager.createNativeQuery("SELECT * from users where username='" + username + "'", UserEntity.class)
