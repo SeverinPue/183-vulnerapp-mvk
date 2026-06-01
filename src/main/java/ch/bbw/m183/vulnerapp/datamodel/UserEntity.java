@@ -1,6 +1,7 @@
 package ch.bbw.m183.vulnerapp.datamodel;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -14,12 +15,14 @@ import java.util.Collection;
 @Table(name = "users")
 public class UserEntity {
 
+	@Size(min = 2, max = 20)
 	@Id
 	String username;
 
 	@Column
 	String email;
 
+	@Size(min = 2, max = 20)
 	@Column
 	String fullname;
 

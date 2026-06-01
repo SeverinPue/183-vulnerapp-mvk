@@ -24,6 +24,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 
+	implementation 'org.hibernate.validator:hibernate-validator:9.1.0.Final'
+
 	runtimeOnly 'org.springframework.boot:spring-boot-starter-actuator'
 	runtimeOnly 'com.h2database:h2'
 
